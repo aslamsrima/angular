@@ -1,0 +1,55 @@
+<style>
+    span{
+        color:red;
+    }
+</style>
+<form name="Details" novalidate ng-submit="Details.$valid && login.submit()">
+        <br><br>
+     <p style="color:blue">First Name*:</p>
+			<input type="text" name="firstName" ng-model="user.firstName" required>
+			<span ng-show="Details.firstName.$touched && Details.firstName.$invalid">The first name is required.</span><br>
+			
+     <p style="color:blue">Last Name*:</p>
+			<input type="text" name="lastName" ng-model="user.lastName" required>
+			<span ng-show="Details.lastName.$touched && Details.lastName.$invalid">The last name is required.</span><br>
+			
+     <p style="color:blue">Email ID*:</p>
+			<input type="Email" name="email" ng-model="user.email" required>
+			<span ng-show="Details.email.$touched && Details.email.$invalid">Email-ID is required.</span><br>
+			
+     <p style="color:blue">Contact Number*:</p>
+			<input type="number" name="tel" ng-model="user.tel" min="1000000000"max="9999999999" required>
+			<span ng-show="Details.tel.$touched && Details.tel.$invalid">Contact Number is required.</span><br>
+            
+     <p style="color:blue">Gender*:</p>
+            <select name="Gender" id="gender_id" ng-model="user.gender" required>
+                    <option value="">By Gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+            </select> 
+			<span class="error" ng-show="validate()">Select Gender</span><br>
+			
+     <p style="color:blue">Location*:</p>
+            <select name="Location" id="location_id" ng-model="user.location" ng-click="validateLocation()" required>
+                    <option value="">Location</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Pune">Pune</option>
+            </select>
+            <span class="error" ng-show="validateLocation()">Choose your location</span>
+            <br><br>
+            <button ng-disabled="Details.$invalid" type="submit" ng-click="show=Details.$valid">Submit</button>
+			<button ng-click="reset()">Clear</button>
+            <button ng-click="show=false">Hide</button>
+		</form>
+        <div ng-hide="show">
+                <p>Click submit to display data</p>
+        </div>
+        <div ng-show="show">
+			<p>FirstName = {{user.firstName}}</p>
+			<p>LastName ={{user.lastName}}</p>
+			<p>Email={{user.email}} </p>
+			<p>Contact Number={{user.tel}}</p>
+            <p>Gender={{user.gender}}</p>
+            <p>Location={{user.location}}
+        </div>
+            

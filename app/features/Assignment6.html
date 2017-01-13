@@ -1,0 +1,17 @@
+<br><br>
+<table border="2" width="50%">
+    <tr>
+        <th>CheckBox</th>
+		<th>Order</th>
+		<th>Price</th>
+	</tr>
+	<tr ng-repeat="t in details" ng-click=""> 
+	    <td><input type="checkbox" ng-model="t.isChecked" ng-click="update(t)"></td>
+		<td>{{t.OrderName}}</td>
+		<td>{{t.price}}</td>
+	</tr>
+	<tr><td></td>
+		<td></td>
+		<td>Total:{{pr}}
+	</tr>
+</table>

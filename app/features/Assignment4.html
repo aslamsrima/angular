@@ -1,0 +1,28 @@
+        <br><br>
+        <table border = "1">
+            <tr>
+               <td style="color:blue">First Name:</td>
+               <td><input type = "text" ng-model = "student.firstName"></td>
+            </tr>
+            <tr>
+               <td style="color:blue">Last Name: </td>
+               <td><input type = "text" ng-model = "student.lastName"></td>
+            </tr> 
+            <tr>
+               <td style="color:blue">Currency: </td>
+               <td><input type = "text" ng-model = "student.fees"></td>
+            </tr>
+        </table>
+        <br/>
+         
+        <table border = "0">
+            <tr>
+               <td style="color:blue">Name(Upper Case): </td><td>{{student.fullName() | uppercase}}</td>
+            </tr>
+            <tr>
+               <td style="color:blue">Name(Lower Case): </td><td>{{student.fullName() | lowercase}}</td>
+            </tr>
+            <tr>
+               <td style="color:blue">Fees: </td><td>{{student.fees | currency}}</td>
+            </tr>
+        </table>
